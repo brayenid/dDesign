@@ -613,6 +613,9 @@ body {
   align-items: center;
   justify-content: center;
 }
+.credit p {
+  padding: 0 15px;
+}
 
 @media screen and (min-width: 1440px) {
   .container {
