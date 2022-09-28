@@ -1,0 +1,752 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+::selection {
+  background-color: #e9d929;
+}
+.containerBesar {
+  width: 100%;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+body {
+  font-size: 30px;
+  overflow-x: hidden;
+  font-family: 'Prata', serif;
+  background-color: #f5f0bb;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  color: #333;
+  width: 100%;
+}
+.bodyBgChange {
+  background-color: #fafafa;
+}
+.menuMbl {
+  display: none;
+  position: fixed;
+  top: 48px;
+  z-index: 30;
+  width: 100%;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+  font-size: 0.6em;
+  background-color: #e9d929c9;
+  padding: 10px 0;
+}
+.navbarFixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 20;
+  padding: 20px 50px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+.brand h3 {
+  font-size: 0.9em;
+}
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.menu ul {
+  display: flex;
+  gap: 20px;
+}
+.menu ul li {
+  list-style: none;
+  position: relative;
+}
+.menu ul li::before {
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #333;
+  position: absolute;
+  margin-left: 6px;
+  bottom: 0;
+  transition: 0.5s 0.2s;
+  -webkit-transition: 0.5s 0.2s;
+  -moz-transition: 0.5s 0.2s;
+  -ms-transition: 0.5s 0.2s;
+  -o-transition: 0.5s 0.2s;
+}
+.menu ul li:hover::before {
+  width: 86%;
+}
+.menu ul li a {
+  font-size: 0.7em;
+}
+.menuList {
+  transform: scale(1) translateX(46px);
+  -webkit-transform: scale(1) translateX(46px);
+  -moz-transform: scale(1) translateX(46px);
+  -ms-transform: scale(1) translateX(46px);
+  -o-transform: scale(1) translateX(46px);
+  transition: 0.5s 0.3s;
+  -webkit-transition: 0.5s 0.3s;
+  -moz-transition: 0.5s 0.3s;
+  -ms-transition: 0.5s 0.3s;
+  -o-transition: 0.5s 0.3s;
+}
+.menuListDissapear {
+  transform: scale(0) translateX(46px);
+  -webkit-transform: scale(0) translateX(46px);
+  -moz-transform: scale(0) translateX(46px);
+  -ms-transform: scale(0) translateX(46px);
+  -o-transform: scale(0) translateX(46px);
+}
+.tutup {
+  width: 40px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transition: 0.5s 0.3s;
+  -webkit-transition: 0.5s 0.3s;
+  -moz-transition: 0.5s 0.3s;
+  -ms-transition: 0.5s 0.3s;
+  -o-transition: 0.5s 0.3s;
+}
+.tutupAppear {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+.tutup span {
+  display: flex;
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+}
+.tutup span:nth-child(3) {
+  width: 20px;
+}
+.tutup input {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  z-index: 1;
+  transform: translateY(-5px);
+  cursor: pointer;
+  opacity: 0;
+}
+.tutup span:nth-child(2) {
+  transform-origin: 0 0;
+}
+.tutup span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+.tutup input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(3px, -4px);
+}
+.tutup input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(2px, 4px);
+}
+.tutup input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+}
+
+.tutupMbl {
+  width: 40px;
+  height: 20px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  transition: 0.5s 0.3s;
+  -webkit-transition: 0.5s 0.3s;
+  -moz-transition: 0.5s 0.3s;
+  -ms-transition: 0.5s 0.3s;
+  -o-transition: 0.5s 0.3s;
+}
+.tutupMblAppear {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+.tutupMbl span {
+  display: flex;
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+}
+.tutupMbl span:nth-child(3) {
+  width: 20px;
+}
+.tutupMbl input {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  z-index: 1;
+  transform: translateY(-5px);
+  cursor: pointer;
+  opacity: 0;
+}
+.tutupMbl span:nth-child(2) {
+  transform-origin: 0 0;
+}
+.tutupMbl span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+.tutupMbl input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(3px, -4px);
+}
+.tutupMbl input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(2px, 4px);
+}
+.tutupMbl input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+}
+
+.toggleMenu {
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transition: 0.5s 0.2s;
+  -webkit-transition: 0.5s 0.2s;
+  -moz-transition: 0.5s 0.2s;
+  -ms-transition: 0.5s 0.2s;
+  -o-transition: 0.5s 0.2s;
+  top: 80px;
+  right: 50px;
+  position: fixed;
+  z-index: 21;
+}
+.appearToggle {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+.toggleMenu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.toggleMenu ul li {
+  text-align: right;
+  position: relative;
+  list-style: none;
+  font-size: 0.7em;
+}
+.toggleMenu ul li::before {
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #333;
+  position: absolute;
+  margin-left: 6px;
+  bottom: 0;
+  right: 0;
+  transition: 0.5s 0.2s;
+  -webkit-transition: 0.5s 0.2s;
+  -moz-transition: 0.5s 0.2s;
+  -ms-transition: 0.5s 0.2s;
+  -o-transition: 0.5s 0.2s;
+  transform-origin: 50% 0;
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+.toggleMenu ul li:nth-child(1):hover::before {
+  width: 45%;
+}
+.toggleMenu ul li:nth-child(2):hover::before {
+  width: 95%;
+}
+.toggleMenu ul li:nth-child(3):hover::before {
+  width: 66%;
+}
+.container {
+  margin: auto;
+  width: 60%;
+}
+.containerLogo {
+  width: 100%;
+}
+.logo {
+  overflow: auto;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 19;
+  height: 100vh;
+}
+.dalamLogo {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.dalamLogo h1 {
+  font-size: 2.5em;
+  color: #333;
+  letter-spacing: 2.4px;
+  width: 90%;
+}
+.dalamLogo p {
+  font-size: 1.1em;
+  width: 90%;
+}
+.containerKotak {
+  display: flex;
+  gap: 25px;
+  margin-top: 300px;
+}
+.kotak {
+  width: 50%;
+}
+.kotak1 {
+  opacity: 0;
+}
+.kotak2 {
+  opacity: 0;
+}
+.kotakOpacity {
+  opacity: 1;
+}
+.kotak1 img,
+.kotak2 img,
+.bingkaiImgGrid img {
+  transition: 0.3s 0.2s;
+  -webkit-transition: 0.3s 0.2s;
+  -moz-transition: 0.3s 0.2s;
+  -ms-transition: 0.3s 0.2s;
+  -o-transition: 0.3s 0.2s;
+}
+.kotak1,
+.kotak2 {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+  transition: clip-path 0.8s;
+  -webkit-transition: clip-path 0.8s;
+  -moz-transition: clip-path 0.8s;
+  -ms-transition: clip-path 0.8s;
+  -o-transition: clip-path 0.8s;
+}
+.kotak1:hover,
+.kotak2:hover {
+  clip-path: polygon(100% 0%, 100% 98%, 0 100%, 0 2%);
+}
+.kotak:hover img,
+.bingkaiImgGrid:hover img {
+  transform: scale(1.09);
+  -webkit-transform: scale(1.09);
+  -moz-transform: scale(1.09);
+  -ms-transform: scale(1.09);
+  -o-transform: scale(1.09);
+}
+.containerKotakGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+  margin-top: 15px;
+}
+.bingkaiImgGrid {
+  width: 100%;
+  overflow: hidden;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  position: relative;
+}
+.imgScalingNormal {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+.viewMore {
+  margin-top: 25px;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transition: 0.5s 0.2s;
+  -webkit-transition: 0.5s 0.2s;
+  -moz-transition: 0.5s 0.2s;
+  -ms-transition: 0.5s 0.2s;
+  -o-transition: 0.5s 0.2s;
+}
+.inheritView {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+.viewMore span {
+  margin: auto;
+  border: 1px solid #333;
+  display: flex;
+  width: 60px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  animation: inheritView 0.5s;
+  -webkit-animation: inheritView 0.5s forwards;
+  overflow: hidden;
+}
+.viewMore span:hover {
+  animation: viewMoreRoll 0.5s forwards;
+  -webkit-animation: viewMoreRoll 0.5s forwards;
+}
+.viewMore a {
+  color: #333;
+  padding: 16px;
+}
+@keyframes viewMoreRoll {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(-23deg);
+    -webkit-transform: rotate(-23deg);
+    -moz-transform: rotate(-23deg);
+    -ms-transform: rotate(-23deg);
+    -o-transform: rotate(-23deg);
+  }
+  75% {
+    transform: rotate(-19deg);
+    -webkit-transform: rotate(-19deg);
+    -moz-transform: rotate(-19deg);
+    -ms-transform: rotate(-19deg);
+    -o-transform: rotate(-19deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+    -webkit-transform: rotate(-20deg);
+    -moz-transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    -o-transform: rotate(-20deg);
+  }
+}
+@keyframes inheritView {
+  0% {
+    transform: rotate(-20deg);
+    -webkit-transform: rotate(-20deg);
+    -moz-transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    -o-transform: rotate(-20deg);
+  }
+  25% {
+    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+  }
+}
+.whatIdo {
+  margin-top: 25px;
+  color: #fff;
+  box-sizing: border-box;
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transition: 0.5s 0.5s;
+  -webkit-transition: 0.5s 0.5s;
+  -moz-transition: 0.5s 0.5s;
+  -ms-transition: 0.5s 0.5s;
+  -o-transition: 0.5s 0.5s;
+  padding: 100px 0;
+}
+.widGrow {
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  color: #333;
+}
+.whatIdo h1 {
+  text-align: right;
+  margin-bottom: 10px;
+}
+.whatIdo p {
+  font-size: 0.7em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+  text-align: justify;
+  line-height: 35px;
+}
+.contact {
+  width: 250px;
+  height: 63px;
+  margin: 30px auto;
+  text-align: center;
+  background-color: #e9d929;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transition: 0.5s 0.8s;
+  -webkit-transition: 0.5s 0.8s;
+  -moz-transition: 0.5s 0.8s;
+  -ms-transition: 0.5s 0.8s;
+  -o-transition: 0.5s 0.8s;
+}
+.contactGrow {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+.contact a {
+  color: #333;
+  border: solid 1px #333;
+  padding: 10px 40px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.contact a:hover {
+  background-color: rgba(51, 51, 51, 0.123);
+}
+.credit {
+  font-size: 0.5em;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 50% !important;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .tutup {
+    display: none;
+  }
+  .menuList {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+  .toggleMenu {
+    display: none;
+  }
+  .navbarFixed {
+    background-color: #f5f0bbcc;
+    height: 48px;
+    z-index: 50;
+  }
+  .menuMbl {
+    top: 48px;
+  }
+  .containerKotakGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 25px;
+  }
+  .dalamLogo {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 800px) {
+  .containerKotak {
+    margin-top: 360px;
+  }
+  .dalamLogo h1 {
+    font-size: 1.8em;
+  }
+  .dalamLogo p {
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 670px) {
+  .menu {
+    display: none;
+  }
+  .tutupMbl,
+  .menuMbl {
+    display: flex;
+  }
+  .menuMbl {
+    transform: translateY(-220%);
+    -webkit-transform: translateY(-220%);
+    -moz-transform: translateY(-220%);
+    -ms-transform: translateY(-220%);
+    -o-transform: translateY(-220%);
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+  }
+  .menuMblAppear {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+  .navbarFixed {
+    height: 48px;
+  }
+  .menuMbl {
+    top: 48px;
+  }
+  .brand h3 {
+    font-size: 0.9em;
+  }
+  .container {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 440px) {
+  .navbarFixed {
+    padding: 10px 10px;
+  }
+  .dalamLogo {
+    font-size: 0.6em;
+  }
+  .container {
+    width: 90%;
+  }
+  .containerKotakGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .containerKotak {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 300px;
+    gap: 10px;
+  }
+  .kotak {
+    width: 100%;
+  }
+  .whatIdo h1 {
+    font-size: 0.9em;
+  }
+  .whatIdo p {
+    font-size: 0.6em;
+  }
+}
+/* media screen height */
+@media screen and (min-height: 1440px) {
+  .container {
+    width: 90%;
+  }
+  .containerKotak {
+    margin-top: 350px;
+  }
+}
+
+@media screen and (max-height: 414px) {
+  .dalamLogo {
+    font-size: 0.7em;
+  }
+}
